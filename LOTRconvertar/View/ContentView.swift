@@ -55,7 +55,7 @@ struct ContentView: View {
                         }.sheet(isPresented: $showSelectCurrency){
                             SelectCurrency(showSelectCurrency: $showSelectCurrency, topCurrency: $leftCurrency, bottomCurrency: $rightCurrency)
                         }
-                        .onChange(of: leftCurrency) { newValue in
+                        .onChange(of: leftCurrency) {
                             leftAmount = rightCurrency.convert(rightAmount, to: leftCurrency)
                         }
                         
@@ -63,9 +63,11 @@ struct ContentView: View {
                         TextField("Amount", text: $leftAmount)
                             .textFieldStyle(.roundedBorder)
                             .focused($leftTyping)
-                            .onChange(of: leftAmount) { newValue in
+                            .onChange(of: leftAmount) {
+                                if leftTyping {
                                     rightAmount = leftCurrency.convert(leftAmount, to: rightCurrency)
                                 }
+                            }
                             .keyboardType(.decimalPad)
                     }
                     
@@ -90,7 +92,7 @@ struct ContentView: View {
                         }.sheet(isPresented: $showSelectCurrency){
                             SelectCurrency(showSelectCurrency: $showSelectCurrency, topCurrency: $leftCurrency, bottomCurrency: $rightCurrency)
                         }
-                        .onChange(of: rightCurrency) { newValue in
+                        .onChange(of: rightCurrency) {
                             rightAmount = leftCurrency.convert(leftAmount, to: rightCurrency)
                         }
                         
@@ -98,8 +100,10 @@ struct ContentView: View {
                             .textFieldStyle(.roundedBorder)
                             .multilineTextAlignment(.trailing)
                             .focused($rightTyping)
-                            .onChange(of: rightAmount) { newValue in
+                            .onChange(of: rightAmount) {
+                                if rightTyping {
                                     leftAmount = rightCurrency.convert(rightAmount, to: leftCurrency)
+                                }
                             }
                             .keyboardType(.decimalPad)
                     }
