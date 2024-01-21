@@ -17,6 +17,7 @@ struct ContentView: View {
     
     @FocusState var leftTyping
     @FocusState var rightTyping
+    @FocusState var keyboardFocus
     
     @State var leftCurrency: Currency = .silverPiece
     @State var rightCurrency: Currency = .goldPiece
@@ -69,6 +70,14 @@ struct ContentView: View {
                                 }
                             }
                             .keyboardType(.decimalPad)
+                            .focused($keyboardFocus)
+                            .toolbar {
+                                ToolbarItem(placement: .keyboard) {
+                                    Button("Done"){
+                                        keyboardFocus = false
+                                    }
+                                }
+                            }
                     }
                     
                     Image(systemName: "equal")
@@ -106,6 +115,7 @@ struct ContentView: View {
                                 }
                             }
                             .keyboardType(.decimalPad)
+                            .focused($keyboardFocus)
                     }
                 }
                 .padding()
