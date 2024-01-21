@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8424FD342B5DA0FD005FC743 /* CurrencyTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8424FD332B5DA0FD005FC743 /* CurrencyTip.swift */; };
 		84898FE42B488DFC00FAE25B /* IconGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84898FE32B488DFC00FAE25B /* IconGrid.swift */; };
 		84B155602B4418F800C7261D /* LOTRconvertarApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B1555F2B4418F800C7261D /* LOTRconvertarApp.swift */; };
 		84B155622B4418F800C7261D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B155612B4418F800C7261D /* ContentView.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8424FD332B5DA0FD005FC743 /* CurrencyTip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyTip.swift; sourceTree = "<group>"; };
 		84898FE32B488DFC00FAE25B /* IconGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconGrid.swift; sourceTree = "<group>"; };
 		84B1555C2B4418F800C7261D /* LOTRconvertar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LOTRconvertar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84B1555F2B4418F800C7261D /* LOTRconvertarApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LOTRconvertarApp.swift; sourceTree = "<group>"; };
@@ -54,6 +56,7 @@
 				84B155742B44ABEC00C7261D /* CurrencyIcons.swift */,
 				84B1556E2B44213B00C7261D /* InfoView.swift */,
 				84B155702B4424E900C7261D /* ExchangeRates.swift */,
+				8424FD332B5DA0FD005FC743 /* CurrencyTip.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -178,6 +181,7 @@
 				84B155732B44A68000C7261D /* SelectCurrency.swift in Sources */,
 				84B155622B4418F800C7261D /* ContentView.swift in Sources */,
 				84B155752B44ABEC00C7261D /* CurrencyIcons.swift in Sources */,
+				8424FD342B5DA0FD005FC743 /* CurrencyTip.swift in Sources */,
 				84B1556F2B44213C00C7261D /* InfoView.swift in Sources */,
 				84E964992B45E0A0002F4CFD /* Currency.swift in Sources */,
 				84B155602B4418F800C7261D /* LOTRconvertarApp.swift in Sources */,

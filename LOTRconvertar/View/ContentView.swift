@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import TipKit
 
 struct ContentView: View {
     
@@ -53,7 +54,8 @@ struct ContentView: View {
                         }
                         .onTapGesture {
                             showSelectCurrency = true
-                        }.sheet(isPresented: $showSelectCurrency){
+                        }.popoverTip(CurrencyTip(), arrowEdge: .bottom)
+                        .sheet(isPresented: $showSelectCurrency){
                             SelectCurrency(showSelectCurrency: $showSelectCurrency, topCurrency: $leftCurrency, bottomCurrency: $rightCurrency)
                         }
                         .onChange(of: leftCurrency) {
@@ -141,6 +143,9 @@ struct ContentView: View {
                     InfoView(showInfoScreen: $showInfoScreen)
                 }
             }
+        }
+        .task {
+            try? Tips.configure()
         }
     }
 }
